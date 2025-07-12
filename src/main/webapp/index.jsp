@@ -4,9 +4,9 @@
     <title>Текстовый квест</title>
 </head>
 <body>
-<h1>заголовок</h1>
+<h1>Пролог</h1>
 <p>описание</p>
-<form action="game.jsp" method="post">
+<form action="game" method="get">
     <label for="playerName">Имя игрока:</label>
     <input type="text" id="playerName" name="playerName">
     <input type="submit" value="Начать">

@@ -1,16 +1,19 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: rexar.ika
-  Date: 11.07.2025
-  Time: 21:43
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Текстовый квест - Игра</title>
 </head>
 <body>
-
+<h1>Игра</h1>
+<p><c:out value="${sceneText}"/></p>
+<form action="game" method="post">
+    <c:forEach var="option" items="${options}">
+        <input type="radio" name="choice" value="${option.id}" id="option${option.id}"/>
+        <label for="option${option.id}">${option.text}</label><br/>
+    </c:forEach>
+    <br/>
+    <input type="submit" value="Подтвердить"/>
+</form>
 </body>
 </html>
