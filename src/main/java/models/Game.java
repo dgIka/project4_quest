@@ -78,8 +78,9 @@ public class Game {
 
 
 
-    void doChoice(int choice, Player player) {
-        Option option = getCurrentDialog(player).getOptions().get(choice);
+    public Dialog doChoice(int choice, Player player) {
+        int result = getCurrentDialog().getOptions().remove(choice).getResult();
+        
         if (choice == 2) {
             decreaseHealth(player);
         }
