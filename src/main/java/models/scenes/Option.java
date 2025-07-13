@@ -1,9 +1,15 @@
 package models.scenes;
 
 
+import lombok.Getter;
+import lombok.Setter;
+
 //Класс вариантов ответов
 //их айди и айди результата(Dialog) этих ответов
+@Getter
+@Setter
 public class Option {
+
 
     private int id;
 
@@ -11,33 +17,19 @@ public class Option {
 
     private int result;
 
+    private String nextScene;
+
     public Option(int id, String text, int result) {
         this.id = id;
         this.text = text;
         this.result = result;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
+    public Option(int id, String text, int result, String nextScene) {
         this.id = id;
-    }
-
-    public String getText() {
-        return text;
-    }
-
-    public void setText(String text) {
         this.text = text;
-    }
-
-    public int getResult() {
-        return result;
-    }
-
-    public void setResult(int result) {
         this.result = result;
+        this.nextScene = nextScene;
     }
+
 }

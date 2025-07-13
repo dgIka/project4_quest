@@ -10,16 +10,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="43edd699-8438-4228-a9ad-5ad868f92233" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/GameServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/models/scenes/AbstractScene.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/models/scenes/CaveScene.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/models/scenes/Dialog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/models/scenes/Option.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/GameServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/GameServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/models/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/models/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/scenes/AbstractScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/scenes/AbstractScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/scenes/CaveScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/scenes/CaveScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/scenes/Dialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/scenes/Dialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/scenes/Option.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/scenes/Option.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/game.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/game.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -171,18 +170,6 @@
         </option>
       </method>
     </configuration>
-    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
-      <deployment />
-      <server-settings />
-      <predefined_log_file enabled="true" id="Tomcat" />
-      <predefined_log_file enabled="true" id="Tomcat Catalina" />
-      <predefined_log_file id="Tomcat Manager" />
-      <predefined_log_file id="Tomcat Host Manager" />
-      <predefined_log_file id="Tomcat Localhost Access" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -201,11 +188,23 @@
       <option name="presentableId" value="Default" />
       <updated>1752254631400</updated>
       <workItem from="1752254632350" duration="5367000" />
-      <workItem from="1752318193070" duration="20217000" />
+      <workItem from="1752318193070" duration="20473000" />
+      <workItem from="1752399855591" duration="8473000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

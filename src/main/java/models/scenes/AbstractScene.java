@@ -18,9 +18,6 @@ public abstract class AbstractScene {
 
     public abstract String getId();
 
-    public abstract Dialog getCurrentDialogId(Player player);
-
-    public abstract List<Option> getOptions(Player player);
 
 
     public void decreaseHealth(Player player) {
@@ -34,5 +31,5 @@ public abstract class AbstractScene {
         }
     }
 
-    abstract void doChoice(int choice, Player player);
+
 }

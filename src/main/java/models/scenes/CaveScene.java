@@ -11,7 +11,6 @@ public class CaveScene extends AbstractScene {
     private String id = "Cave";
 
     private Map<Integer, Dialog> dialogs;
-    private int currentDialogId;
 
     public CaveScene(Player player) {
         this.currentDialogId = player.getCurrentDialogId();
@@ -51,15 +50,7 @@ public class CaveScene extends AbstractScene {
 
     }
 
-    @Override
-    public List<Option> getOptions(Player player) {
-        return getCurrentDialogId(player).getOptions();
-    }
 
-    @Override
-    public Dialog getCurrentDialogId(Player player) {
-        return dialogs.get(player.getCurrentDialogId());
-    }
 
     @Override
     public String getId() {
@@ -76,14 +67,6 @@ public class CaveScene extends AbstractScene {
         super.increaseHealth(player);
     }
 
-    @Override
-    void doChoice(int choice, Player player) {
-        Option option = getCurrentDialogId(player).getOptions().get(choice);
-        if (choice == 2) {
-            decreaseHealth(player);
-        }
-        player.setCurrentDialogId(option.getResult());
-    }
 
     public void setId(String id) {
         this.id = id;
@@ -97,11 +80,5 @@ public class CaveScene extends AbstractScene {
         this.dialogs = dialogs;
     }
 
-    public int getCurrentDialogId() {
-        return currentDialogId;
-    }
 
-    public void setCurrentDialogId(int currentDialogId) {
-        this.currentDialogId = currentDialogId;
-    }
 }

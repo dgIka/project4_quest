@@ -9,6 +9,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import models.Game;
+import models.scenes.Dialog;
 import models.scenes.Option;
 import models.Player;
 
@@ -24,17 +25,15 @@ public class GameServlet extends HttpServlet {
         Game game;
         Player player;
         if (session.getAttribute("Game") == null) {
-            player = new Player();
-            session.setAttribute("Player", player);
-            game = new Game(player);
+            game = new Game();
             session.setAttribute("Game", game);
         } else {
-            player = (Player) session.getAttribute("Player");
             game = (Game) session.getAttribute("Game");
         }
 
-        req.setAttribute("text", game.getCaveScene().getCurrentDialogId());
-        req.setAttribute("options", game.getCaveScene().getOptions(player));
+        req.setAttribute("sceneText", game.getCurrentDialog().getText());
+        req.setAttribute("options", game.getCurrentDialogOptions());
+
 
         req.getRequestDispatcher("/WEB-INF/views/game.jsp").forward(req, resp);
 

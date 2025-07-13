@@ -24,17 +24,6 @@ public class Player {
         this.hp = hp;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-        Player player = (Player) o;
-        return hp == player.hp;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(hp);
-    }
 
     public int getCurrentDialogId() {
         return currentDialogId;

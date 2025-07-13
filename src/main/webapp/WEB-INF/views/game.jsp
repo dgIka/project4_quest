@@ -3,6 +3,13 @@
 <html>
 <head>
     <title>Текстовый квест - Игра</title>
+    <style> /* перенос текста */
+        p {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            max-width: 600px;
+        }
+    </style>
 </head>
 <body>
 <h1>Игра</h1>
