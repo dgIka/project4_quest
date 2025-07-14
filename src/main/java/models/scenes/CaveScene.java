@@ -57,16 +57,6 @@ public class CaveScene extends AbstractScene {
         return this.id;
     }
 
-    @Override
-    public void decreaseHealth(Player player) {
-        super.decreaseHealth(player);
-    }
-
-    @Override
-    public void increaseHealth(Player player) {
-        super.increaseHealth(player);
-    }
-
 
     public void setId(String id) {
         this.id = id;

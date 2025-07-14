@@ -78,12 +78,23 @@ public class Game {
 
 
 
-    public Dialog doChoice(int choice, Player player) {
-        int result = getCurrentDialog().getOptions().remove(choice).getResult();
+    public void doChoice(int choice) {
+        int result = getCurrentDialog().getOptions().get(choice).getResult();
+        player.setCurrentDialogId(result);
         
-        if (choice == 2) {
+        if (player.getCurrentDialogId() == 2 && choice == 2) {
             decreaseHealth(player);
         }
-        player.setCurrentDialogId(option.getResult());
+    }
+
+    public void decreaseHealth(Player player) {
+        if (player.getHp() > 0) {
+            player.setHp(player.getHp() - 1);
+        }
+    }
+    public void increaseHealth(Player player) {
+        if (player.getHp() < 3) {
+            player.setHp(player.getHp() + 1);
+        }
     }
 }

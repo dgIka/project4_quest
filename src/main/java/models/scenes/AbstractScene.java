@@ -20,16 +20,7 @@ public abstract class AbstractScene {
 
 
 
-    public void decreaseHealth(Player player) {
-        if (player.getHp() > 0) {
-            player.setHp(player.getHp() - 1);
-        }
-    }
-    public void increaseHealth(Player player) {
-        if (player.getHp() < 3) {
-            player.setHp(player.getHp() + 1);
-        }
-    }
+
 
 
 }

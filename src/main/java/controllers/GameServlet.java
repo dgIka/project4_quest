@@ -33,7 +33,7 @@ public class GameServlet extends HttpServlet {
 
         req.setAttribute("sceneText", game.getCurrentDialog().getText());
         req.setAttribute("options", game.getCurrentDialogOptions());
-
+        req.setAttribute("hp", game.getPlayer().getHp());
 
         req.getRequestDispatcher("/WEB-INF/views/game.jsp").forward(req, resp);
 
@@ -48,6 +48,10 @@ public class GameServlet extends HttpServlet {
             RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/end.jsp");
             dispatcher.forward(req, resp);
         }
+        System.out.println(req.getParameter("choice"));
+        game.doChoice(Integer.parseInt((String) req.getParameter("choice")));
+
+        session.setAttribute("Game", game);
 
         if (session.getAttribute("Game") == null) {}
 
