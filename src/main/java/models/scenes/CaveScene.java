@@ -12,6 +12,8 @@ public class CaveScene extends AbstractScene {
 
     private Map<Integer, Dialog> dialogs;
 
+
+
     public CaveScene(Player player) {
         this.currentDialogId = player.getCurrentDialogId();
         player.setCurrentSceneId(this.id);

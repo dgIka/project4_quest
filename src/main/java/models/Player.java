@@ -14,6 +14,7 @@ public class Player {
     public Player() {
         this.hp = 3;
         this.currentDialogId = 1;
+        this.currentSceneId = "Cave";
     }
 
     public int getHp() {

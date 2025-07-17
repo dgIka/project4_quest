@@ -27,7 +27,7 @@
 </div>
 <form action="game" method="post">
     <c:forEach var="option" items="${options}">
-        <input type="radio" name="choice" value="${option.id}" id="option${option.id}"/>
+        <input type="radio" name="choice" value="${option.result}" id="option${option.id}"/>
         <label for="option${option.id}">${option.text}</label><br/>
     </c:forEach>
     <br/>

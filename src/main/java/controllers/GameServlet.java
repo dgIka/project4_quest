@@ -15,6 +15,7 @@ import models.Player;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 
 @WebServlet(name = "GameServlet", value = "/game")
@@ -35,6 +36,11 @@ public class GameServlet extends HttpServlet {
         req.setAttribute("options", game.getCurrentDialogOptions());
         req.setAttribute("hp", game.getPlayer().getHp());
 
+        for (Integer a: game.getCaveScene().getDialogs().keySet()) {
+            System.out.println(a);
+            System.out.println(game.getCaveScene().getDialogs().get(a));
+        }
+
         req.getRequestDispatcher("/WEB-INF/views/game.jsp").forward(req, resp);
 
     }
@@ -49,17 +55,16 @@ public class GameServlet extends HttpServlet {
             dispatcher.forward(req, resp);
         }
         System.out.println(req.getParameter("choice"));
-        game.doChoice(Integer.parseInt((String) req.getParameter("choice")));
+        game.doChoice(Integer.parseInt(req.getParameter("choice")));
 
-        session.setAttribute("Game", game);
+        req.setAttribute("sceneText", game.getCurrentDialog().getText());
+        req.setAttribute("options", game.getCurrentDialogOptions());
+        req.setAttribute("hp", game.getPlayer().getHp());
+
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/game.jsp");
+        dispatcher.forward(req, resp);
 
         if (session.getAttribute("Game") == null) {}
-
-
-
-
-
-
 
     }
 

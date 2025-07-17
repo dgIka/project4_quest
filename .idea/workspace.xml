@@ -13,8 +13,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/GameServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/GameServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/models/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/scenes/AbstractScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/scenes/AbstractScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/models/scenes/CaveScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/scenes/CaveScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/scenes/Dialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/scenes/Dialog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/game.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/game.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -192,6 +193,7 @@
       <workItem from="1752399855591" duration="17331000" />
       <workItem from="1752474033565" duration="260000" />
       <workItem from="1752499100226" duration="11412000" />
+      <workItem from="1752740154307" duration="6548000" />
     </task>
     <servers />
   </component>

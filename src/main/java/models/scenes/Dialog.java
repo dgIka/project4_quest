@@ -32,4 +32,9 @@ public class Dialog {
     public void setOptions(List<Option> options) {
         this.options = options;
     }
+
+    @Override
+    public String toString() {
+        return text;
+    }
 }

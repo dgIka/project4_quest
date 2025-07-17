@@ -23,7 +23,7 @@ public class Game {
     public Game() {
         this.player = new Player();
         this.caveScene = new CaveScene(player);
-        this.currentSceneId = caveScene.getId();
+        this.currentSceneId = player.getCurrentSceneId();
         this.player.setCurrentSceneId(currentSceneId);
     }
 
@@ -79,12 +79,11 @@ public class Game {
 
 
     public void doChoice(int choice) {
-        int result = getCurrentDialog().getOptions().get(choice).getResult();
-        player.setCurrentDialogId(result);
-        
         if (player.getCurrentDialogId() == 2 && choice == 2) {
             decreaseHealth(player);
         }
+        player.setCurrentDialogId(choice);
+
     }
 
     public void decreaseHealth(Player player) {
@@ -92,6 +91,15 @@ public class Game {
             player.setHp(player.getHp() - 1);
         }
     }
+
+    public String getCurrentSceneId() {
+        return currentSceneId;
+    }
+
+    public void setCurrentSceneId(String currentSceneId) {
+        this.currentSceneId = currentSceneId;
+    }
+
     public void increaseHealth(Player player) {
         if (player.getHp() < 3) {
             player.setHp(player.getHp() + 1);
