@@ -19,6 +19,8 @@ public class Option {
 
     private String nextScene;
 
+    private boolean isDecreasedHp;
+
     public Option(int id, String text, int result) {
         this.id = id;
         this.text = text;
@@ -30,6 +32,12 @@ public class Option {
         this.text = text;
         this.result = result;
         this.nextScene = nextScene;
+    }
+    public Option(int id, String text, int result, boolean isDecreasedHp) {
+        this.id = id;
+        this.text = text;
+        this.result = result;
+        this.isDecreasedHp = isDecreasedHp;
     }
 
 }

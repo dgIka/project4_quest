@@ -6,19 +6,26 @@
     <style>
         p {
             white-space: pre-wrap;
-            word-wrap: break-word;
+            word-wrap: break-word; /* перенос строк */
             max-width: 600px;
         }
         .heart {
             color: red;
-            font-size: 24px; /* Увеличиваем размер сердечек */
+            font-size: 24px; /* сердечки */
             margin-right: 5px;
         }
+        .health-message {
+             color: red;
+             font-style: italic;
+         }
     </style>
 </head>
 <body>
 <h1>Игра</h1>
 <p><c:out value="${sceneText}"/></p>
+<c:if test="${healthDecreased}">
+    <p class="health-message">Теряешь <span class="heart">♥</span></p>
+</c:if>
 <div>
     Здоровье:
     <c:forEach begin="1" end="${hp}">

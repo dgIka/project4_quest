@@ -29,7 +29,7 @@ public class CaveScene extends AbstractScene {
 
         this.dialogs.put(2, new Dialog("Ты протягиваешь руку в сторону факела.",
                 List.of(new Option(1, "Аккуратно нащупать основание факела.", 4),
-                        new Option(2, "Взяться за тлеющую лучину.", 3))));
+                        new Option(2, "Взяться за тлеющую лучину.", 3, true))));
 
         this.dialogs.put(3, new Dialog("Ты обжегся. Это было довольно очевидно. " +
                 "Ты берешь факел как надо, разжигаешь его и осматриваешься. " +

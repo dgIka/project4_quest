@@ -48,14 +48,20 @@ public class GameServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
+        Game game = null;
 
-        Game game = (Game) session.getAttribute("Game");
+        if (session.getAttribute("Game") != null) {
+            game = (Game) session.getAttribute("Game");
+        } else {
+            RequestDispatcher dispatcherStart = req.getRequestDispatcher("/WEB-INF/views/index.jsp");
+            dispatcherStart.forward(req, resp);
+        }
         if (game.isGameOver()) {
             RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/end.jsp");
             dispatcher.forward(req, resp);
         }
         System.out.println(req.getParameter("choice"));
-        game.doChoice(Integer.parseInt(req.getParameter("choice")));
+        game.doChoice(Integer.parseInt(req.getParameter("choice")), req);
 
         req.setAttribute("sceneText", game.getCurrentDialog().getText());
         req.setAttribute("options", game.getCurrentDialogOptions());
@@ -64,7 +70,7 @@ public class GameServlet extends HttpServlet {
         RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/game.jsp");
         dispatcher.forward(req, resp);
 
-        if (session.getAttribute("Game") == null) {}
+
 
     }
 

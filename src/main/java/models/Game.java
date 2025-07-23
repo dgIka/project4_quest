@@ -1,5 +1,6 @@
 package models;
 
+import jakarta.servlet.http.HttpServletRequest;
 import models.scenes.CaveScene;
 import models.scenes.Dialog;
 import models.scenes.Option;
@@ -78,9 +79,14 @@ public class Game {
 
 
 
-    public void doChoice(int choice) {
-        if (player.getCurrentDialogId() == 2 && choice == 2) {
+    public void doChoice(int choice, HttpServletRequest req) {
+        if (caveScene.getDialogs().get(player.getCurrentDialogId())
+                .getOptions()
+                .stream()
+                .filter(a -> a.getResult() == choice)
+                .findFirst().get().isDecreasedHp()) {
             decreaseHealth(player);
+            req.setAttribute("healthDecreased", true);
         }
         player.setCurrentDialogId(choice);
 
