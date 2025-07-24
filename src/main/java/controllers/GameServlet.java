@@ -56,12 +56,14 @@ public class GameServlet extends HttpServlet {
             RequestDispatcher dispatcherStart = req.getRequestDispatcher("/WEB-INF/views/index.jsp");
             dispatcherStart.forward(req, resp);
         }
-        if (game.isGameOver()) {
+
+        System.out.println(req.getParameter("choice"));
+        game.doChoice(Integer.parseInt(req.getParameter("choice")), req);
+
+        if (game.getPlayer().getHp() < 1) {
             RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/end.jsp");
             dispatcher.forward(req, resp);
         }
-        System.out.println(req.getParameter("choice"));
-        game.doChoice(Integer.parseInt(req.getParameter("choice")), req);
 
         req.setAttribute("sceneText", game.getCurrentDialog().getText());
         req.setAttribute("options", game.getCurrentDialogOptions());

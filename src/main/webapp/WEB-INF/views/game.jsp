@@ -6,18 +6,27 @@
     <style>
         p {
             white-space: pre-wrap;
-            word-wrap: break-word; /* перенос строк */
+            word-wrap: break-word;
             max-width: 600px;
         }
         .heart {
             color: red;
-            font-size: 24px; /* сердечки */
+            font-size: 24px;
             margin-right: 5px;
         }
         .health-message {
-             color: red;
-             font-style: italic;
-         }
+            color: red;
+            font-style: italic;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
     </style>
 </head>
 <body>
@@ -34,11 +43,14 @@
 </div>
 <form action="game" method="post">
     <c:forEach var="option" items="${options}">
-        <input type="radio" name="choice" value="${option.result}" id="option${option.id}"/>
+        <input type="radio" name="choice" value="${option.result}" id="option${option.id}" required/>
         <label for="option${option.id}">${option.text}</label><br/>
     </c:forEach>
     <br/>
     <input type="submit" value="Подтвердить"/>
+</form>
+<form action="restart" method="post">
+    <input type="submit" value="Начать заново" class="restart-button"/>
 </form>
 </body>
 </html>
