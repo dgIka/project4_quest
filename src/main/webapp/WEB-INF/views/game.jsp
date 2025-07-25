@@ -47,6 +47,7 @@
         <label for="option${option.id}">${option.text}</label><br/>
     </c:forEach>
     <br/>
+    <br/>
     <input type="submit" value="Подтвердить"/>
 </form>
 <form action="restart" method="post">

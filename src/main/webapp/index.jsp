@@ -26,6 +26,7 @@
     <label for="playerName">Имя игрока:</label>
     <input type="text" id="playerName" name="playerName">
     <br/>
+    <br/>
     <input type="submit" value="Начать">
 </form>
 </body>

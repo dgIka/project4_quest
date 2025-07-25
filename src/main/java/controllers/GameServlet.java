@@ -56,11 +56,24 @@ public class GameServlet extends HttpServlet {
             RequestDispatcher dispatcherStart = req.getRequestDispatcher("/WEB-INF/views/index.jsp");
             dispatcherStart.forward(req, resp);
         }
+        System.out.println(req.getParameter("choice")); //временно, тк выдает не те варианты
 
-        System.out.println(req.getParameter("choice"));
-        game.doChoice(Integer.parseInt(req.getParameter("choice")), req);
+        Integer choice = Integer.parseInt(req.getParameter("choice"));
 
-        if (game.getPlayer().getHp() < 1) {
+//        Option option = game.getCurrentDialogOptions() // придумать потом вариант попроще
+//                .stream()
+//                .filter(a -> a.getResult() == choice)
+//                .findFirst().get();
+        Option option = game.getOptionByResult(choice); //вариант попроще, пока временно
+
+        if (option.getNextScene() != null && !game.getPlayer().getCurrentSceneId().equals(option.getNextScene())) { //проверка перехода к новой сцене
+            game.setNewScene(option.getNextScene());
+        }
+
+
+        game.doChoice(option, req);
+
+        if (game.getPlayer().getHp() < 1) { //смерть от потери здоровья
             RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/end.jsp");
             dispatcher.forward(req, resp);
         }

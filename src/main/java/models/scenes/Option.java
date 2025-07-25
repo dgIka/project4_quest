@@ -40,4 +40,8 @@ public class Option {
         this.isDecreasedHp = isDecreasedHp;
     }
 
+    @Override
+    public String toString() {
+        return text + " " + nextScene;
+    }
 }
