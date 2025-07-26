@@ -1,10 +1,7 @@
 package models;
 
 import jakarta.servlet.http.HttpServletRequest;
-import models.scenes.CaveScene;
-import models.scenes.Dialog;
-import models.scenes.InterviewScene;
-import models.scenes.Option;
+import models.scenes.*;
 
 import java.util.List;
 
@@ -12,13 +9,11 @@ import java.util.List;
 public class Game {
     private int id;
 
-    private boolean gameActive;
-
-    private boolean gameOver;
-
     private CaveScene caveScene;
 
     private InterviewScene interviewScene;
+
+    private ForestScene forestScene;
 
     private Player player;
 
@@ -47,21 +42,6 @@ public class Game {
         this.id = id;
     }
 
-    public boolean isGameActive() {
-        return gameActive;
-    }
-
-    public void setGameActive(boolean gameActive) {
-        this.gameActive = gameActive;
-    }
-
-    public boolean isGameOver() {
-        return gameOver;
-    }
-
-    public void setGameOver(boolean gameOver) {
-        this.gameOver = gameOver;
-    }
 
     public Player getPlayer() {
         return player;
@@ -76,6 +56,8 @@ public class Game {
             return this.caveScene.getDialogs().get(player.getCurrentDialogId());
         } else if (currentSceneId.equals("Interview")) {
             return this.interviewScene.getDialogs().get(player.getCurrentDialogId());
+        } else if (currentSceneId.equals("Forest")) {
+            return this.forestScene.getDialogs().get(player.getCurrentDialogId());
         } else return null;
     }
 
@@ -86,14 +68,6 @@ public class Game {
 
 
     public void doChoice(Option option, HttpServletRequest req) {
-//        if (caveScene.getDialogs().get(player.getCurrentDialogId())
-//                .getOptions()
-//                .stream()
-//                .filter(a -> a.getResult() == choice)
-//                .findFirst().get().isDecreasedHp()) {
-//            decreaseHealth(player);
-//            req.setAttribute("healthDecreased", true);
-//        }
         if(option.isDecreasedHp()) {
             decreaseHealth(player);
             req.setAttribute("healthDecreased", true);
@@ -130,6 +104,10 @@ public class Game {
         if (!currentSceneId.equals(newSceneId)) {
             if (newSceneId.equals("Interview")) {
                 interviewScene = new InterviewScene(player);
+                currentSceneId = newSceneId;
+                getPlayer().setCurrentSceneId(newSceneId);
+            } else if (newSceneId.equals("Forest")) {
+                forestScene = new ForestScene(player);
                 currentSceneId = newSceneId;
                 getPlayer().setCurrentSceneId(newSceneId);
             }

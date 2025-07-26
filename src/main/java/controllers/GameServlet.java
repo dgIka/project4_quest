@@ -36,10 +36,10 @@ public class GameServlet extends HttpServlet {
         req.setAttribute("options", game.getCurrentDialogOptions());
         req.setAttribute("hp", game.getPlayer().getHp());
 
-        for (Integer a: game.getCaveScene().getDialogs().keySet()) {
-            System.out.println(a);
-            System.out.println(game.getCaveScene().getDialogs().get(a));
-        }
+//        for (Integer a: game.getCaveScene().getDialogs().keySet()) {
+//            System.out.println(a);
+//            System.out.println(game.getCaveScene().getDialogs().get(a));
+//        }
 
         req.getRequestDispatcher("/WEB-INF/views/game.jsp").forward(req, resp);
 
@@ -56,7 +56,6 @@ public class GameServlet extends HttpServlet {
             RequestDispatcher dispatcherStart = req.getRequestDispatcher("/WEB-INF/views/index.jsp");
             dispatcherStart.forward(req, resp);
         }
-        System.out.println(req.getParameter("choice")); //временно, тк выдает не те варианты
 
         Integer choice = Integer.parseInt(req.getParameter("choice"));
 
@@ -68,6 +67,11 @@ public class GameServlet extends HttpServlet {
 
         if (option.getNextScene() != null && !game.getPlayer().getCurrentSceneId().equals(option.getNextScene())) { //проверка перехода к новой сцене
             game.setNewScene(option.getNextScene());
+        }
+
+        if (option.getNextScene() != null && option.getNextScene().equals("Win")) { //победа
+            RequestDispatcher dispatcherWin = req.getRequestDispatcher("/WEB-INF/views/win.jsp");
+            dispatcherWin.forward(req, resp);
         }
 
 
@@ -84,9 +88,6 @@ public class GameServlet extends HttpServlet {
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/game.jsp");
         dispatcher.forward(req, resp);
-
-
-
     }
 
 }
