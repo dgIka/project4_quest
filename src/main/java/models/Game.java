@@ -42,6 +42,21 @@ public class Game {
         this.id = id;
     }
 
+    public InterviewScene getInterviewScene() {
+        return interviewScene;
+    }
+
+    public void setInterviewScene(InterviewScene interviewScene) {
+        this.interviewScene = interviewScene;
+    }
+
+    public ForestScene getForestScene() {
+        return forestScene;
+    }
+
+    public void setForestScene(ForestScene forestScene) {
+        this.forestScene = forestScene;
+    }
 
     public Player getPlayer() {
         return player;
